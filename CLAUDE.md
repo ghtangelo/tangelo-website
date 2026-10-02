@@ -67,7 +67,7 @@ Stylesheet and script links carry a version tag (currently `?v=20261001d`) in in
 - Local preview: `ruby -run -e httpd /Users/jonathancho/Desktop/Tangelo/tangelo-website/public -p 8123` (use the ABSOLUTE path; a relative path stopped working after a session restart and every request returned 500). Then open http://localhost:8123/.
 - No node/python/ImageMagick on this machine; `sips` handles images; `ruby` is available (use `-Eutf-8` when reading files with special characters).
 - When testing scroll behavior in the preview pane, the tab must be in front, or its smooth-scroll animation pauses.
-- Repo: https://github.com/ghtangelo/tangelo-website (private). Hosting: Vercel, auto-deploys when Jon pushes from GitHub Desktop (`vercel.json` points at `public/`). As of 2026-10-01 only the first commit is pushed; all later work is uncommitted/unpublished.
+- Repo: https://github.com/ghtangelo/tangelo-website (private). Hosting: Vercel, auto-deploys when Jon pushes from GitHub Desktop (`vercel.json` points at `public/`). Vercel was connected to the GitHub repo on 2026-10-01 (Settings > Git); before that, pushes did not trigger deploys, and the live site stayed on the first commit. Commit "site updates 10-01" (abe5ca6) contains the full current site. A push after connecting triggers the first real auto-deploy.
 
 ## Open items before launch
 1. Paste the GHL webhook URL (`WEBHOOK_URL`) and calendar link (`BOOKING_URL`) in `public/script.js`.
