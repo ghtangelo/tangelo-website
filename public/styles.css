@@ -7,7 +7,7 @@
   --text:#12263F; --muted:#4A5A70; --line:#DCE3EC;
   --font-head:"Barlow Condensed",system-ui,sans-serif;
   --font-body:Barlow,system-ui,sans-serif;
-  --max:1080px;
+  --max:1140px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -40,7 +40,7 @@ a{color:var(--green)}
 @media(max-width:400px){.nav .brand img{height:40px}.btn-sm{padding:9px 12px;font-size:15px}}
 
 /* Hero */
-.hero{background:var(--navy);color:#fff;text-align:center;padding:72px 0 112px}
+.hero{background:linear-gradient(180deg,rgba(10,16,28,.68) 0%,rgba(10,16,28,.74) 45%,rgba(10,16,28,.84) 100%),url(/img/hero.jpg) center 30%/cover no-repeat,var(--navy);color:#fff;text-align:center;padding:72px 0 112px}
 .hero .eyebrow{color:var(--accent);font:700 18px var(--font-head);letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px}
 .hero h1{font-size:clamp(46px,9vw,96px);font-weight:800;margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--orange)}
@@ -148,3 +148,110 @@ footer .copy{grid-column:1/-1;color:var(--muted);font-size:14px;margin:0;border-
 .quote figcaption{margin-top:14px;font:700 16px var(--font-head);letter-spacing:.08em;text-transform:uppercase;color:var(--orange-text)}
 .alt-contact .btn-ghost{color:#fff}
 
+
+/* Testimonial placeholders: video + text message screenshots */
+.vid{margin:0}
+.vid figcaption{margin-top:12px;font:700 16px var(--font-head);letter-spacing:.08em;text-transform:uppercase;color:var(--orange-text)}
+.video-ph,.vid video,.vid iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:6px}
+.video-ph{position:relative;background:linear-gradient(135deg,#1B3554,#12263F);display:grid;place-items:center;box-shadow:0 8px 26px #12263F33}
+.play{width:64px;height:64px;border-radius:50%;background:var(--orange);position:relative;box-shadow:0 4px 14px #0004}
+.play::after{content:"";position:absolute;left:25px;top:19px;border-left:20px solid var(--navy);border-top:13px solid transparent;border-bottom:13px solid transparent}
+.ph-label{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#D5DEEA}
+.sub{margin:48px 0 20px;font-size:28px}
+.sms-row{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:900px}
+.sms{margin:0}
+.sms img{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 8px 26px #12263F33}
+.sms-ph{position:relative;aspect-ratio:9/16;max-height:480px;width:100%;margin:0 auto;border-radius:22px;background:#fff;border:3px solid var(--navy);box-shadow:0 8px 26px #12263F33;padding:28px 16px 40px;display:flex;flex-direction:column;gap:12px}
+.sms-ph .b{display:block;height:34px;width:62%;border-radius:18px;background:#E3E8EF}
+.sms-ph .b.out{align-self:flex-end;background:#C9DCF5}
+.sms-ph .b.s{height:22px;width:42%}
+.sms-ph .ph-label{color:var(--muted)}
+.quotes-row{margin-top:40px}
+
+/* Testimonials polish: featured video layout, quote marks */
+.vid-grid{display:grid;gap:28px 24px}
+@media(min-width:900px){
+  .vid-grid{grid-template-columns:2fr 1fr;grid-template-rows:auto auto;align-items:start}
+  .vid-grid .vid:first-child{grid-row:1 / span 2}
+  .vid-grid .vid:first-child .play{width:92px;height:92px}
+  .vid-grid .vid:first-child .play::after{left:36px;top:28px;border-left:28px solid var(--navy);border-top:18px solid transparent;border-bottom:18px solid transparent}
+}
+.video-ph{border-radius:10px;background:radial-gradient(circle at 50% 45%,#2A4A73 0%,#1B3554 45%,#12263F 100%)}
+.play{box-shadow:0 0 0 10px #FF7E1333,0 6px 18px #0005}
+.quote{position:relative;padding-top:44px}
+.quote::before{content:"\201C";position:absolute;top:6px;left:22px;font:800 64px/1 var(--font-head);color:var(--orange)}
+.sms-row{margin:40px auto 0}
+.hero h1,.hero .lead,.hero .eyebrow,.hero .note{text-shadow:0 2px 18px rgba(0,0,0,.7),0 1px 3px rgba(0,0,0,.5)}
+.hero p.lead{color:#fff;font-weight:500}.hero .note{color:#EAF0F7}
+.faq .ph{background:#FFF4DD;padding:0 4px;border-radius:3px}
+
+/* Mobile navigation menu (hamburger), shown below 820px */
+.menu-btn{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:0;background:none;border:0;border-radius:6px;cursor:pointer}
+.menu-btn span{display:block;width:24px;height:3px;border-radius:2px;background:var(--navy);transition:transform .2s,opacity .2s}
+.nav.menu-open .menu-btn span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav.menu-open .menu-btn span:nth-child(2){opacity:0}
+.nav.menu-open .menu-btn span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(min-width:820px){.menu-btn{display:none}}
+@media(max-width:819px){
+  .nav .wrap{gap:8px}
+  .nav .wrap > .btn{margin-left:auto}
+  .nav.menu-open ul{display:flex;flex-direction:column;gap:0;position:absolute;top:100%;left:0;right:0;margin:0;padding:6px 20px 14px;background:#fff;border-bottom:4px solid var(--orange);box-shadow:0 14px 24px #12263F33}
+  .nav.menu-open ul li{border-bottom:1px solid var(--line)}
+  .nav.menu-open ul li:last-child{border-bottom:0}
+  .nav.menu-open ul a{display:block;padding:15px 4px;font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){.menu-btn span{transition:none}}
+
+/* Phones: native anchor jumps (hero/packages Request Pricing buttons) stop exactly at the bottom of the header (76px), so the section's background is flush with it */
+@media(max-width:819px){html{scroll-padding-top:76px}}
+
+/* Legal pages: lists and spacing */
+.legal ul{padding-left:22px;margin:10px 0}
+.legal li{margin:6px 0}
+.legal p{margin:10px 0}
+
+/* Form: SMS consent checkbox and thank-you / booking panel */
+.consent .check{display:flex;gap:12px;align-items:flex-start;font-weight:400;font-size:14px;line-height:1.5;color:var(--muted);cursor:pointer;margin:0}
+.consent input[type=checkbox]{width:22px;height:22px;flex:0 0 22px;margin:2px 0 0;padding:0;accent-color:var(--navy);cursor:pointer}
+.consent a{color:var(--navy);font-weight:600}
+.success{text-align:center;padding:24px 8px}
+.success h3{font-size:34px;margin-bottom:10px;color:var(--navy)}
+.success p{color:var(--muted);margin:0 auto 22px;max-width:460px}
+.success .fine{margin-top:16px}
+[hidden]{display:none !important}
+
+/* Footer: logo, contact details, legal links */
+footer .foot-grid{display:grid;gap:28px;align-items:start}
+.foot-brand img{height:56px;width:auto;display:block}
+.foot-contact{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.foot-contact li{display:flex;gap:12px;align-items:flex-start;font-size:17px;line-height:1.4}
+.foot-contact svg{flex:0 0 22px;width:22px;height:22px;margin-top:1px;fill:none;stroke:var(--orange-text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.foot-contact a,.foot-contact address{color:var(--navy);font-style:normal;text-decoration:none}
+.foot-contact a:hover{text-decoration:underline}
+footer .foot-links{display:flex;flex-direction:column;gap:10px}
+footer .foot-links a{font-weight:600}
+@media(min-width:760px){footer .foot-grid{grid-template-columns:1fr 1.3fr auto;gap:40px}footer .foot-links{align-items:flex-start}}
+
+/* Footer layout v2: logo with contact details underneath, legal links on the right */
+@media(min-width:760px){footer .foot-grid{grid-template-columns:1fr auto;gap:40px}}
+
+/* Footer layout v3: no divider under the logo; legal links side by side, bottom right, just above the light line */
+footer .foot-links{flex-direction:row;flex-wrap:wrap;gap:8px 24px}
+@media(min-width:760px){footer .foot-grid{align-items:end}footer .foot-links{justify-content:flex-end}}
+.foot-brand img{margin-bottom:20px}
+.fine a{color:var(--navy);font-weight:600}
+
+/* Footer bottom row: copyright left, compliance mailing address centered in very fine print */
+footer .copy{display:grid;gap:6px}
+.copy .compliance{font-size:10px;line-height:1.4;letter-spacing:.01em;color:#66758A}
+@media(min-width:760px){footer .copy{grid-template-columns:1fr auto;align-items:center}.copy .compliance{text-align:right}}
+
+/* Two optional SMS consent boxes + "Review our Terms of Use and Privacy Policy" line */
+.consent{display:grid;gap:16px}
+.consent .consent-links{margin:2px 0 0 34px;font-size:14px;color:var(--muted)}
+.form-card.submitted .form-grid{opacity:.55}
+.legal a{color:var(--navy);font-weight:600}
+
+/* After a successful submit the form collapses to the thank-you panel; the navy section keeps its height and the content is centered in it */
+#contact.held{display:flex;flex-direction:column;justify-content:center}
+#contact.held > .wrap{width:100%}
