@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Call Is Confirmed | Tangelo Leads</title>
+<meta name="description" content="Your call with Tangelo Leads is confirmed. Here is how to prepare and what we will cover.">
+<!-- Hidden post-booking page: keep out of search engines -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+<!-- ================= TRACKING PIXELS: PASTE META PIXEL / GOOGLE TAG HERE =================
+     Paste your Meta Pixel base code and your Google tag (gtag.js or GTM) in this spot.
+     This is the page where the booking conversion should fire (for example Meta "Schedule" or "Lead",
+     and your Google Ads conversion event), because only people who actually booked reach it.
+     ================= END TRACKING PIXELS ================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/lp.css?v=15">
+</head>
+<body>
+
+<!-- Minimal header: logo only -->
+<header class="lp-head">
+  <div class="wrap"><img src="/img/logo.png" width="156" height="50" alt="Tangelo Leads"></div>
+</header>
+
+<main>
+  <!-- 1. CONFIRMATION + ADD TO CALENDAR -->
+  <section class="confirm">
+    <div class="wrap">
+      <span class="pill"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span id="pill-text">You're booked</span></span>
+      <h1><span class="o">Your Call</span> Is Confirmed.</h1>
+      <p class="lead">We've saved this time just for you. Check your email and text messages for your confirmation and call details.</p>
+
+      <!-- Filled in automatically when the booking link passes the appointment time (see the script at the bottom) -->
+      <div class="when" id="when" hidden>
+        <small>Your call</small>
+        <strong id="when-text"></strong>
+      </div>
+
+      <!-- Add to Calendar buttons are placed here by the script -->
+      <div class="cal" data-cal></div>
+    </div>
+  </section>
+
+  <!-- 2. PREPARATION & AGENDA -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head center"><span class="kicker">Make it count</span><h2>Preparation &amp; Agenda</h2></div>
+      <div class="agenda">
+        <article class="card">
+          <h3>To make this call productive</h3>
+          <ul class="tick-list">
+            <li>Have the service areas you want to cover</li>
+            <li>Know the monthly lead volume your team can handle</li>
+            <li>Know your current lead sources and what you pay per lead</li>
+            <li>Know your close rate</li>
+            <li>Think about how you want your leads delivered</li>
+            <li>Make sure the decision-maker is on the call</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>On this call we'll cover</h3>
+          <ul class="tick-list">
+            <li>Your business and where you want to work</li>
+            <li>Which verticals and lead criteria fit your team</li>
+            <li>How your leads would be delivered: CRM, spreadsheet, or email</li>
+            <li>Package options and next steps</li>
+            <li>What getting started looks like</li>
+            <li>Your questions</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FAQ: the same 8 questions and answers as the main website -->
+  <section class="sec soft">
+    <div class="wrap">
+      <div class="sec-head"><span class="kicker">FAQ</span><h2>Straight answers</h2></div>
+      <div class="faq">
+        <details><summary>What types of leads do you offer?</summary><p>We provide leads for solar, roofing, bath and window contractors, nationwide.</p></details>
+        <details><summary>How do I get started?</summary><p>Fill out the form and tell us about your business. We'll set up a call to find the right package for you.</p></details>
+        <details><summary>Can I choose where my leads come from?</summary><p>Yes. You can customize your targeting by location and other criteria that fit your business. Keep in mind that narrower targeting can limit volume, so we'll help you find the right balance.</p></details>
+        <details><summary>What information comes with each lead?</summary><p>Each lead includes the homeowner's full name, phone number, email and address, plus project details specific to your industry to help your team prepare for the conversation.</p></details>
+        <details><summary>How are leads delivered, and how fast?</summary><p>Delivery happens after your payment is confirmed, through the method you choose: webhook, Excel or email. Leads usually start arriving within 36 hours, and we'll confirm timing for your order when we connect.</p></details>
+        <details><summary>What if a lead isn't good?</summary><p>Replacement and refund terms are spelled out in your package agreement, so you know exactly what's covered before you get started. We'll walk you through them on our call, and if you have a concern about a lead, tell us and we'll review it with you.</p></details>
+        <details><summary>Where do your leads come from?</summary><p>We source leads through a network of publishers and advertisers we work with.</p></details>
+        <details><summary>Is there a long-term commitment?</summary><p>No. There's no long-term commitment and no monthly retainer, and each order stands on its own. Every package comes with an insertion order and a written agreement that spells out the terms clearly and protects you, us and the consumer. We'll go over both with you on our call before you get started.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SECURE YOUR SPOT -->
+  <section class="secure">
+    <div class="wrap">
+      <span class="kicker">Don't miss your call</span>
+      <h2>Secure your spot</h2>
+      <p>We're looking forward to speaking with you.</p>
+      <div class="cal" data-cal></div>
+      <p class="resched">Something came up? Please reschedule instead of missing it. Email <a href="mailto:support@tangeloleads.com">support@tangeloleads.com</a> and we'll find a new time.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ADD-TO-CALENDAR SCRIPT
+     How it works: if your GoHighLevel calendar redirects here with the appointment details in the web address, for example
+       https://tangeloleads.com/booked?name=Jane%20Smith&start=2026-10-22T14:00:00-04:00&end=2026-10-22T14:30:00-04:00
+     (start and end as ISO date-times, or Unix timestamps), this page shows the visitor their call time in their own time zone and
+     the buttons add it to Google Calendar or download a file for Apple / Outlook.
+     Optional extras: &link=<meeting link> adds it to the calendar event.
+     If no appointment time is passed, the button shows a short tip instead: use the Add to Calendar link in the confirmation email or text. -->
+<script>
+(function () {
+  "use strict";
+  var DEFAULT_MINUTES = 30;                      // only used when the booking link does not send an end time
+  var TITLE = "Call with Tangelo Leads";
+  var DETAILS = "Your call with Tangelo Leads. Need to reschedule? Email support@tangeloleads.com.";
+
+var q = new URLSearchParams(location.search);
+var keys = {};                                         // names are matched ignoring capitals, spaces and underscores
+q.forEach(function (v, k) { keys[k.toLowerCase().replace(/[^a-z0-9]/g, "")] = v; });
+function pick() { for (var i = 0; i < arguments.length; i++) { if (keys[arguments[i]]) { return keys[arguments[i]]; } } return ""; }
+function fix(v) { return (v || "").trim().replace(/(\d)\s(\d\d:?\d\d)$/, "$1+$2"); }   // a "+" in a web address turns into a space
+function parse(v) {
+  v = fix(v); if (!v) return null;
+  if (/^\d{10}$/.test(v)) return new Date(+v * 1000);
+  if (/^\d{13}$/.test(v)) return new Date(+v);
+  var d = new Date(v); return isNaN(d) ? null : d;
+}
+var rawStart = pick("start", "starttime", "appointmentstart", "startdatetime", "date");
+var rawEnd = pick("end", "endtime", "appointmentend", "enddatetime");
+var rawName = pick("name", "firstname", "fullname", "contactname");
+var link = pick("link", "meetinglink", "meetinglocation", "location", "zoom").trim();
+var start = parse(rawStart), end = parse(rawEnd);
+if (start && (!end || end <= start)) end = new Date(start.getTime() + DEFAULT_MINUTES * 60000);
+var first = rawName.trim().split(/\s+/)[0];
+
+// Test view: add &debug=1 to the redirect link to see exactly what GoHighLevel sent and whether this page understood it.
+if (q.has("debug")) {
+  var box = document.createElement("pre");
+  box.style.cssText = "text-align:left;white-space:pre-wrap;word-break:break-all;background:#fff;color:#12263F;border:3px solid #FF7E13;border-radius:6px;padding:14px;margin:28px auto 0;max-width:720px;font:14px/1.5 monospace";
+  box.textContent = "TEST VIEW (remove &debug from the link when you are done)\n\nReceived: " + (location.search || "(nothing)") +
+    "\n\nname  -> " + (rawName || "(not received)") + "\nstart -> " + (rawStart || "(not received)") + "   =>   " + (start ? "understood as " + start.toString() : "NOT UNDERSTOOD") +
+    "\nend   -> " + (rawEnd || "(not received)") + "   =>   " + (parse(rawEnd) ? "understood as " + parse(rawEnd).toString() : (start ? "not received, using the default length" : "NOT UNDERSTOOD")) +
+    "\nlink  -> " + (link || "(not received)");
+  document.querySelector(".confirm .wrap").appendChild(box);
+}
+
+  if (first) { document.getElementById("pill-text").textContent = "You're booked, " + first; }
+
+  function stamp(d) { return d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, ""); }   // 20261022T180000Z
+  function esc(s) { return s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
+
+  var cals = document.querySelectorAll("[data-cal]");
+  if (start) {
+    var when = new Intl.DateTimeFormat(undefined, { weekday: "long", month: "long", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).format(start);
+    document.getElementById("when-text").textContent = when;
+    document.getElementById("when").hidden = false;
+
+    var details = DETAILS + (link ? "\nJoin: " + link : "");
+    var google = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(TITLE) +
+      "&dates=" + stamp(start) + "/" + stamp(end) + "&details=" + encodeURIComponent(details) + (link ? "&location=" + encodeURIComponent(link) : "");
+    var ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Tangelo Leads//Booking//EN", "BEGIN:VEVENT",
+      "UID:" + stamp(start) + "-" + Math.random().toString(36).slice(2) + "@tangeloleads.com", "DTSTAMP:" + stamp(new Date()),
+      "DTSTART:" + stamp(start), "DTEND:" + stamp(end), "SUMMARY:" + esc(TITLE), "DESCRIPTION:" + esc(details)]
+      .concat(link ? ["LOCATION:" + esc(link)] : []).concat(["END:VEVENT", "END:VCALENDAR"]).join("\r\n");
+    var icsUrl = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+
+    cals.forEach(function (box) {
+      box.innerHTML = '<a class="btn" target="_blank" rel="noopener" href="' + google + '">Add to Google Calendar</a>' +
+                      '<a class="btn btn-ghost" download="tangelo-leads-call.ics" href="' + icsUrl + '">Apple / Outlook</a>';
+    });
+  } else {
+    cals.forEach(function (box) {
+      box.innerHTML = '<button type="button" class="btn">Add to Calendar</button><p class="cal-tip" hidden>Open your confirmation email or text message and tap <strong>Add to Calendar</strong> (Google, Apple, or Outlook) so this call is on your calendar.</p>';
+      box.querySelector("button").addEventListener("click", function () { box.querySelector(".cal-tip").hidden = false; });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
