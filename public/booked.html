@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/lp.css?v=20">
+<link rel="stylesheet" href="/lp.css?v=21">
 </head>
 <body>
 
@@ -139,6 +139,7 @@ var link = pick("link", "meetinglink", "meetinglocation", "location", "zoom").tr
 var start = parse(rawStart), end = parse(rawEnd);
 if (start && (!end || end <= start)) end = new Date(start.getTime() + DEFAULT_MINUTES * 60000);
 var first = rawName.trim().split(/\s+/)[0];
+if (/[{}]/.test(rawName)) { first = ""; }                // unfilled merge text such as {{contact.first_name}}: ignore it
 
 // Test view: add &debug=1 to the redirect link to see exactly what GoHighLevel sent and whether this page understood it.
 if (q.has("debug")) {
