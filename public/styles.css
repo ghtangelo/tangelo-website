@@ -260,3 +260,5 @@ footer .copy{display:grid;gap:6px}
 
 /* Phones: the gap between Verticals and How it works was double the other section gaps (72px + 72px); match the rest */
 @media(max-width:819px){#how{padding-top:0}}
+
+.t-note{margin:28px auto 0;max-width:1000px;text-wrap:balance;text-align:center;font-size:14px;line-height:1.5;color:#5F6F85}

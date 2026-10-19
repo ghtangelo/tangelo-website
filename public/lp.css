@@ -184,3 +184,5 @@ a{color:var(--navy);font-weight:600}
   .t-quote{display:flex;flex-direction:column}
   .t-quote figcaption{margin-top:auto;padding-top:14px;white-space:nowrap}
 }
+
+.t-note{margin:28px auto 0;max-width:1000px;text-wrap:balance;text-align:center;font-size:14px;line-height:1.5;color:#5F6F85}
