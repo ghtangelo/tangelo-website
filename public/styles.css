@@ -262,3 +262,4 @@ footer .copy{display:grid;gap:6px}
 @media(max-width:819px){#how{padding-top:0}}
 
 .t-note{margin:28px auto 0;max-width:1000px;text-wrap:balance;text-align:center;font-size:14px;line-height:1.5;color:#5F6F85}
+@media(max-width:819px){.t-note{font-size:13px;line-height:1.6}}
