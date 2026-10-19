@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/lp.css?v=15">
+<link rel="stylesheet" href="/lp.css?v=20">
 </head>
 <body>
 
@@ -176,9 +176,13 @@ if (q.has("debug")) {
                       '<a class="btn btn-ghost" download="tangelo-leads-call.ics" href="' + icsUrl + '">Apple / Outlook</a>';
     });
   } else {
-    cals.forEach(function (box) {
-      box.innerHTML = '<button type="button" class="btn">Add to Calendar</button><p class="cal-tip" hidden>Open your confirmation email or text message and tap <strong>Add to Calendar</strong> (Google, Apple, or Outlook) so this call is on your calendar.</p>';
-      box.querySelector("button").addEventListener("click", function () { box.querySelector(".cal-tip").hidden = false; });
+    // No appointment time was passed: show the note (top spot only) and the same two buttons.
+    // They cannot build a calendar entry without a time, so tapping one explains where to find the Add to Calendar link instead.
+    cals.forEach(function (box, i) {
+      box.innerHTML = (i === 0 ? '<div class="when cal-note"><small>Don&rsquo;t miss out</small><strong>Add your call to your calendar</strong><p>Use the buttons below, or the <b>Add to Calendar</b> link in your confirmation.</p></div>' : '') +
+        '<div class="cal-btns"><button type="button" class="btn">Add to Google Calendar</button><button type="button" class="btn btn-ghost">Apple / Outlook</button></div>' +
+        '<p class="cal-tip" hidden>We could not pull your call time into this page. Open your confirmation email or text message and tap <strong>Add to Calendar</strong> (Google, Apple, or Outlook).</p>';
+      box.querySelectorAll("button").forEach(function (b) { b.addEventListener("click", function () { box.querySelector(".cal-tip").hidden = false; }); });
     });
   }
 })();

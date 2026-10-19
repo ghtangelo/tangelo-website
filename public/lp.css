@@ -173,3 +173,7 @@ a{color:var(--navy);font-weight:600}
   .ticks{text-align:left}
   .form-card h2,.form-card .lead{text-align:center}
 }
+.cal-note{margin-top:0}
+.cal-note p{margin:10px 0 0;color:#D5DEEA;font-size:17px;line-height:1.5}
+.cal-note p b{color:#fff;font-weight:600}
+.cal .cal-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;flex-basis:100%;margin-top:22px}
