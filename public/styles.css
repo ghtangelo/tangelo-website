@@ -158,10 +158,12 @@ footer .copy{grid-column:1/-1;color:var(--muted);font-size:14px;margin:0;border-
 .play::after{content:"";position:absolute;left:25px;top:19px;border-left:20px solid var(--navy);border-top:13px solid transparent;border-bottom:13px solid transparent}
 .ph-label{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#D5DEEA}
 .sub{margin:48px 0 20px;font-size:28px}
-.sms-row{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:900px}
+.sms-row{display:grid;gap:24px;grid-template-columns:1fr;max-width:420px}
+@media(min-width:640px){.sms-row{grid-template-columns:repeat(2,1fr);max-width:700px}}
+@media(min-width:1000px){.sms-row{grid-template-columns:repeat(4,1fr);max-width:1140px}}
 .sms{margin:0}
-.sms img{display:block;width:100%;height:auto;border-radius:22px;box-shadow:0 8px 26px #12263F33}
-.sms-ph{position:relative;aspect-ratio:9/16;max-height:480px;width:100%;margin:0 auto;border-radius:22px;background:#fff;border:3px solid var(--navy);box-shadow:0 8px 26px #12263F33;padding:28px 16px 40px;display:flex;flex-direction:column;gap:12px}
+.sms img{display:block;width:100%;height:auto;aspect-ratio:920/1726;object-fit:cover;object-position:center top;border-radius:30px;border:5px solid var(--navy);box-shadow:0 8px 26px #12263F33}
+.sms-ph{position:relative;aspect-ratio:920/1686;width:100%;margin:0 auto;border-radius:30px;background:#fff;border:5px solid var(--navy);box-shadow:0 8px 26px #12263F33;padding:28px 16px 40px;display:flex;flex-direction:column;gap:12px}
 .sms-ph .b{display:block;height:34px;width:62%;border-radius:18px;background:#E3E8EF}
 .sms-ph .b.out{align-self:flex-end;background:#C9DCF5}
 .sms-ph .b.s{height:22px;width:42%}
@@ -255,3 +257,6 @@ footer .copy{display:grid;gap:6px}
 /* After a successful submit the form collapses to the thank-you panel; the navy section keeps its height and the content is centered in it */
 #contact.held{display:flex;flex-direction:column;justify-content:center}
 #contact.held > .wrap{width:100%}
+
+/* Phones: the gap between Verticals and How it works was double the other section gaps (72px + 72px); match the rest */
+@media(max-width:819px){#how{padding-top:0}}
