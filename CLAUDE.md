@@ -95,3 +95,9 @@ Stylesheet and script links carry a version tag (currently `?v=20261001d`) in in
 - No guarantees of results, revenue, or close rates.
 - No prices anywhere on the public site; no lead counts per package.
 - Original copy and imagery only.
+
+## Solar-only landing page (added 2026-10-20, NOT yet pushed)
+- `public/get-solar-leads.html` (live URL `/get-solar-leads`) is a copy of `get-leads.html` focused on solar only. Same CSS (`lp.css`), same survey embed, same noindex.
+- Differences from get-leads: eyebrow "For solar installers and contractors"; h1 "Fresh Solar Leads, Delivered Straight to Your Sales Team"; first trust group is "Built for" (Solar installers / Solar contractors / Solar sales teams; "Delivered to" group unchanged); title and meta description are solar-only.
+- Kept (solar): Ben/Infinity Solar video, Grant/Sunsational Solar quote, Jesse text screenshot (text3.jpg, moved to the first slot). Everything non-solar (Dave video, Liam and Travis quotes, Leo/Garret/Dean screenshots) was put back to placeholders. DO NOT send ad traffic until the placeholders are filled or hidden.
+- The page uses the same GHL survey and `/booked` thank-you page as get-leads, so submissions cannot be told apart by page unless the survey/hidden field is changed in GHL.

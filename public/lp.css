@@ -158,7 +158,7 @@ a{color:var(--navy);font-weight:600}
 @media(min-width:1000px){.t-sms-row{grid-template-columns:repeat(4,1fr);max-width:1140px}}
 .t-sms{margin:0}
 .t-sms img{display:block;width:100%;height:auto;aspect-ratio:920/1726;object-fit:cover;object-position:center top;border-radius:30px;border:5px solid var(--navy);box-shadow:0 8px 26px rgba(18,38,63,.25)}
-.t-sms-ph{position:relative;aspect-ratio:920/1686;width:100%;margin:0 auto;border-radius:30px;background:#fff;border:5px solid var(--navy);box-shadow:0 8px 26px rgba(18,38,63,.2);padding:28px 16px 40px;display:flex;flex-direction:column;gap:12px}
+.t-sms-ph{position:relative;aspect-ratio:920/1726;width:100%;margin:0 auto;border-radius:30px;background:#fff;border:5px solid var(--navy);box-shadow:0 8px 26px rgba(18,38,63,.2);padding:28px 16px 40px;display:flex;flex-direction:column;gap:12px}
 .t-sms-ph .b{display:block;height:34px;width:62%;border-radius:18px;background:#E3E8EF}
 .t-sms-ph .b.out{align-self:flex-end;background:#C9DCF5}
 .t-sms-ph .b.s{height:22px;width:42%}
